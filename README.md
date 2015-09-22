@@ -4,8 +4,8 @@ INTEGRANTE: JOSE ALEXANDER MUÑOZ
             
 Socket utils
 basics-01.py: Este programa muestra el uso básico de la clase toma en particular, cómo obtener el nombre de host de un servidor en el que se ejecuta el código.
-basics-02.py: Este programa muestra cómo obtener la IP de un servidor dado su nombre.
-basics-03.py: Este programa muestra cómo obtener el nombre de un servicio de red por su nombre de protocolo y número de puerto.
+Basics-02.py: Este programa muestra cómo obtener la IP de un servidor dado su nombre.
+Basics-03.py: Este programa muestra cómo obtener el nombre de un servicio de red por su nombre de protocolo y número de puerto.
 
 NTP Client
 basics-04.py: Este programa se ejecuta como un cliente NTP utilizando la biblioteca ntplib. Este programa le pide a un servidor NTP para la hora actual y lo imprime.
