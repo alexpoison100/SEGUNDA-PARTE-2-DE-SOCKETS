@@ -1,8 +1,9 @@
-# SEGUNDA-PARTE-2-DE-SOCKETS
+# SEGUNDA-PARTE-DE-SOCKETS
 INTEGRANTE: JOSE ALEXANDER MUÑOZ   
-
+            JESUS CUESTA
+            
 Socket utils
-basics-01.py: Este programa muestra el uso básico de la clase toma en particular, cómo obtener el nombre de host de un servidor en el que se ejecuta el código
+basics-01.py: Este programa muestra el uso básico de la clase toma en particular, cómo obtener el nombre de host de un servidor en el que se ejecuta el código.
 basics-02.py: Este programa muestra cómo obtener la IP de un servidor dado su nombre.
 basics-03.py: Este programa muestra cómo obtener el nombre de un servicio de red por su nombre de protocolo y número de puerto.
 
@@ -18,5 +19,10 @@ socket-04.py: Este programa muestra cómo se puede enviar una petición HTTP al 
 socket-05.py: Muestra cómo recibir la respuesta desde un servidor HTTP.
 
 Socket server
-server-01.py: 
+server-01.py: En este programa se utiliza la función socket.bind () que es un método para enlazar un socket con un host y el puerto dado.
+server-02.py: En este programa el socket.listen () y socket.accept () están expuestos y al ejecutar el programa espera por una conexion llamada bloqueante es decir que no se ejecutara la siguiente linea de codigo hasta tanto alguien no se conecte a este IP y ese puerto.
+server-03.py: Este programa muestra cómo un servidor recibe una conexión a continuación, cómo responde al cliente.
+server-04.py: En este programa se crea un bucle infinito con el fin de ejecutar el servidor siempre.
+server-05.py: Este programa crea un servidor multiproceso que acepta conexiones desde varios clientes y que es capaz de asistir a ellas simultáneamente.El programa servidor principal acepta una conexión y crea un nuevo hilo para manejar la comunicación para la conexión, y luego el servidor se remonta a aceptar más conexiones.
 
+Echo Service
