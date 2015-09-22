@@ -1,7 +1,10 @@
 # SEGUNDA-PARTE-DE-SOCKETS
-INTEGRANTE: JOSE ALEXANDER MUÑOZ   
+0-INTEGRANTES: 
+            JOSE ALEXANDER MUÑOZ   
             JESUS CUESTA
             
+1-DESCRIPCIÓN DE LOS PROGRAMAS  
+
 Socket utils
 
 basics-01.py: Este programa muestra el uso básico de la clase toma en particular, cómo obtener el nombre de host de un servidor en el que se ejecuta el código.
@@ -43,3 +46,17 @@ server-05.py: Este programa crea un servidor multiproceso que acepta conexiones 
 
 
 Echo Service
+
+
+
+2-COMO EJECUTAR CODIGO FUENTE
+
+Los script en Python normalmente se guardan con la extensión .py no es estrictamente necesario hacerlo de esa manera, puede no llevar extensión incluso, pero colocaremos la extensión .py por cuestiones de orden, digo, me imagino que quieres diferenciarlo del resto de ficheros que tengas.
+
+Para comenzar, abrimos un editor de texto, ya sea Mousepad, Gedit, Kate, Vi, Nano, Emacs o el que gusten, luego vamos donde esta el código fuente de cada programa en este gihub guardado, le damos copiar,abrimos el editor de texto le damos pegar y por el ultimo guardar con la extensión .py.
+
+Luego lo guardamos con el nombre ejemploPython.py, abrimos una terminal (ctrl t) buscamos el directorio donde se haya guardado el archivo .py y luego solo tenemos que poner:
+
+$ python ejemploPython.py
+
+Y ya debe de funcionar.
