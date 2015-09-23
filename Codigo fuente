@@ -80,6 +80,8 @@ s.connect((remote_ip, port))
 print "Socket connected to " + host + " on ip " + remote_ip
 
 
+
+
 socket-04.py this time the program shows how you can send a HTTP request to the HTTP server
 código:
 
@@ -135,3 +137,131 @@ except socket.error:
     sys.exit()
 
 print "Message send successfullly"
+
+
+
+socket-05.py shows how to receive the responde from a HTTP server
+Codigo:
+
+#/usr/bin/python
+# Complete el codigo, busque "TU CODIGO AQUI"
+import socket
+import sys
+
+# Se esta creando un socket que es del tipo IPv4 (socket.AF_INET) y es orientado
+# a conexion (socket.SOCK_STREAM a.k.a. TCP)
+#
+try: # esta estructura permite capturar comportamientos anomalos
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+except socket.error, msg: # si es del tipo socket.error
+	print "Failed to create socket. Error code: " + str(msg[0]) + ", error message: " + msg[1] 
+	sys.exit()
+
+print "Socket created"
+
+host = "www.google.com"
+# TU CODIGO AQUI
+# defina una variable port y almacene alli el numero 80
+port = 80
+try:
+	# TU CODIGO AQUI
+	# Encuentre el IP dado el nombre de servidor en la variable 'host'
+	# y almacenelo en una variable llamada 'remote_ip'
+	remote_ip= socket.gethostbyname(host)
+
+except socket.gaierror:
+	print "Hostname could not be resolved. Exiting"
+	sys.exit()
+
+# TU CODIGO AQUI
+# Imprima por pantalla un mensaje que diga
+# La direccion IP de www.google.com es 216.58.192.100
+# el numero IP puede variar y debe ser leido de la variable remote_ip
+print "La direccion IP de [%s] es [%s]" % (host,remote_ip)
+
+s.connect((remote_ip, port))
+
+print "Socket connected to " + host + " on ip " + remote_ip
+
+# Datos a enviarse
+message = "GET / HTTP/1.1\r\n\r\n"
+
+try:
+	s.sendall(message)
+except socket.error:
+	print "Send failed"
+	sys.exit()
+
+print "Message send successfullly"
+
+# Recibiendo datos
+reply = s.recv(4096)
+print reply
+s.close()
+
+
+
+Socket server
+server-05.py this time you need to complete the code in order to create a multithreaded server which accepts 
+connections from several clients and it is able to attend them simultaneously.
+Codigo:
+
+#/usr/bin/python
+import socket
+import sys
+from thread import *
+
+HOST = '' # Este servidor escuchara por todas las interfaces de red
+PORT = 8888 # Un identificador de puerto cualquiera
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+print 'Socket created'
+
+try:
+	s.bind((HOST, PORT)) # Esta funcion asocia un socket a un IP y un port
+except socket.error, msg:
+	print 'Bind failed. Error code: ' + str(msg[0]) + ' message ' + msg[1]
+	sys.exit()
+
+print 'Socket bind complete'
+
+s.listen(10)
+print 'Socket now listening'
+
+# Vaya a la pagina 
+# http://www.binarytides.com/python-socket-programming-tutorial/
+# En particular a la seccion 'Handling Connections' y explique que es lo que
+# pretende hacer esta nueva parte del codigo. Adicionelo a este programa
+
+#Funcion para conexiones de manipulacion. Esto se utiliza para crear hilos
+def clientthread(conn):
+#Enviando el mensaje a cliente conectado
+    conn.send('Welcome to the server. Type something and hit enter\n') 
+#enviar solo toma cadena
+     
+#bucle infinito de modo que la funcion no termina y el hilo no terminan .
+    while True:
+         
+        #Recibir de cliente
+        data = conn.recv(1024)
+        reply = 'OK...' + data
+        if not data: 
+            break
+     
+        conn.sendall(reply)
+     
+    #salir de bucle
+    conn.close()
+ 
+#ahora seguir hablando con el cliente
+while 1:
+    #esperar para aceptar una conexion - blocking call
+    conn, addr = s.accept()
+    print 'Connected with ' + addr[0] + ':' + str(addr[1])
+     
+    #iniciar nuevo hilo toma primero argumento como un nombre de funcion que se ejecute , la segunda es la tupla de argumentos de la funcion.
+    start_new_thread(clientthread ,(conn,))
+ 
+s.close()
+
