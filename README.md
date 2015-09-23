@@ -52,6 +52,8 @@ Echo-server.py - Echo-client.py: La función de estos dos programas es que un ho
 
 El Protocolo Echo es un servicio en el protocolo de Internet suite definido en RFC 862. Se propuso originalmente para las pruebas y la medición de los tiempos de ida y vuelta [ cita requerida ] en las redes IP .
 
+-------------------------------------------------------------------------------------------------------------------
+
 2-COMO EJECUTAR CODIGO FUENTE
 
 Los script en Python normalmente se guardan con la extensión .py no es estrictamente necesario hacerlo de esa manera, puede no llevar extensión incluso, pero colocaremos la extensión .py por cuestiones de orden, digo, me imagino que quieres diferenciarlo del resto de ficheros que tengas.
