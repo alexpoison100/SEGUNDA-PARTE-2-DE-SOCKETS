@@ -1,5 +1,6 @@
 # SEGUNDA-PARTE-DE-SOCKETS
 0-INTEGRANTES: 
+
             JOSE ALEXANDER MUÑOZ   
             JESUS CUESTA
             
@@ -47,7 +48,9 @@ server-05.py: Este programa crea un servidor multiproceso que acepta conexiones 
 
 Echo Service
 
+Echo-server.py - Echo-client.py: La función de estos dos programas es que un host en este caso (echo-cliente.py) puede conectarse a un servidor que soporta el Protocolo Echo usando el Protocolo de Control de Transmisión (TCP ) en el número de puerto conocido, en este caso (port 8888). El servidor envía una copia idéntica de los datos que recibe del cliente.
 
+El Protocolo Echo es un servicio en el protocolo de Internet suite definido en RFC 862. Se propuso originalmente para las pruebas y la medición de los tiempos de ida y vuelta [ cita requerida ] en las redes IP .
 
 2-COMO EJECUTAR CODIGO FUENTE
 
@@ -60,3 +63,10 @@ Luego lo guardamos con el nombre ejemploPython.py, abrimos una terminal (ctrl t)
 $ python ejemploPython.py
 
 Y ya debe de funcionar.
+
+Para ejecutar los programas Echo service que son echo-server y echo-cliente tocaria asi:
+En una terminal:
+$ python echo-server.py --port 8888
+En otra terminal:
+$ python echo-client.py --port 8888
+
