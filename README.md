@@ -65,8 +65,12 @@ $ python ejemploPython.py
 Y ya debe de funcionar.
 
 Para ejecutar los programas Echo service que son echo-server y echo-cliente tocaria asi:
+
 En una terminal:
+
 $ python echo-server.py --port 8888
+
 En otra terminal:
+
 $ python echo-client.py --port 8888
 
